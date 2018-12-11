@@ -29,6 +29,11 @@ endif
 SRC_SUBDIR += error
 SOURCES += errors.c
 
+# Pool
+SRC_SUBDIR += pool
+SOURCES += pool_create_acquire.c
+SOURCES += pool_destroy_release.c
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src
