@@ -102,6 +102,11 @@ SOURCES += string_truncate.c
 SRC_SUBDIR += debug
 SOURCES += print_memory.c
 
+# Convert
+SRC_SUBDIR += convert
+SOURCES += ft_toa_base.c
+SOURCES += ft_ato_base.c
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src
