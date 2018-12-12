@@ -1,5 +1,5 @@
-#ifndef PRINT_42_H
-# define PRINT_42_H
+#ifndef IO_42_H
+# define IO_42_H
 
 # include <stddef.h>
 # include <sys/types.h>
@@ -21,6 +21,15 @@
 # ifndef MB_LEN_MAX
 #  define MB_LEN_MAX 4
 # endif
+
+typedef struct	s_gnl
+{
+	char	*str;
+	char	*eol;
+	int		fd;
+	int		offset;
+	int		reads;
+}				t_gnl;
 
 typedef struct	s_format
 {

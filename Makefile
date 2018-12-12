@@ -107,8 +107,8 @@ SRC_SUBDIR += convert
 SOURCES += ft_toa_base.c
 SOURCES += ft_ato_base.c
 
-# Print
-SRC_SUBDIR += print
+# IO
+SRC_SUBDIR += io
 SOURCES += ft_printf.c
 SOURCES += ft_printf_core.c
 SOURCES += ft_dprintf.c
