@@ -1,7 +1,7 @@
 #ifndef STRUCTS_42_H
 # define STRUCTS_42_H
 
-# include <stdlib.h>
+# include <stddef.h>
 
 typedef struct	s_pool
 {

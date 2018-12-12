@@ -34,6 +34,22 @@ SRC_SUBDIR += pool
 SOURCES += pool_create_acquire.c
 SOURCES += pool_destroy_release.c
 
+# Memory
+SRC_SUBDIR += memory
+SOURCES += next_power.c
+SOURCES += ft_malloc_or_die.c
+SOURCES += ft_memset.c
+SOURCES += ft_memcpy.c
+SOURCES += ft_memccpy.c
+SOURCES += ft_memmove.c
+SOURCES += ft_memcmp.c
+SOURCES += ft_realloc.c
+ifeq ($(SAN),yes)
+	SOURCES += ft_memchr_sanitize.c
+else
+	SOURCES += ft_memchr.c
+endif
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src
