@@ -109,6 +109,8 @@ SOURCES += ft_ato_base.c
 
 # IO
 SRC_SUBDIR += io
+SOURCES += ft_put.c
+SOURCES += ft_put_fd.c
 SOURCES += ft_printf.c
 SOURCES += ft_printf_core.c
 SOURCES += ft_dprintf.c

@@ -48,6 +48,15 @@ typedef struct	s_format
 
 typedef	int		(*t_fc)(t_string*, t_format*, va_list);
 
+void	ft_putchar(char c);
+void	ft_putstr(char const *c);
+void	ft_putendl(char const *c);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *c, int fd);
+void	ft_putendl_fd(char const *c, int fd);
+void	ft_putnbr_fd(int n, int fd);
+
 /*
 ** standard printf flavors
 */
