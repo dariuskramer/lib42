@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include <sys/mman.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -5,12 +6,7 @@
 #include "pool_42.h"
 
 #define MMAP_PROT		(PROT_READ|PROT_WRITE)
-
-#if defined(__APPLE__)
-# define MMAP_FLAGS		(MAP_ANONYMOUS|MAP_PRIVATE)
-#else
-# define MMAP_FLAGS		(MAP_PRIVATE)
-#endif
+#define MMAP_FLAGS		(MAP_ANONYMOUS|MAP_PRIVATE)
 
 static inline void	*mmap_wrapper(size_t size)
 {

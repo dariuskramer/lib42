@@ -131,6 +131,18 @@ SOURCES += int_formatting.c
 SOURCES += parsing.c
 SOURCES += utils.c
 
+# List
+SRC_SUBDIR += list
+SOURCES += list_clear.c
+SOURCES += list_create.c
+SOURCES += list_get_set.c
+SOURCES += list_init.c
+SOURCES += list_insert.c
+SOURCES += list_new_node.c
+SOURCES += list_pop.c
+SOURCES += list_push.c
+SOURCES += list_remove.c
+
 # Getopt
 SRC_SUBDIR += getopt
 SOURCES += ft_getopt.c

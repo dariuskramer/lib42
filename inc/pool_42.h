@@ -3,7 +3,7 @@
 
 # include <stddef.h>
 
-# define POOL_SIZE		(4*4096)
+# define POOL_DEFAULT_SIZE		(4*4096)
 
 typedef struct	s_pool
 {
