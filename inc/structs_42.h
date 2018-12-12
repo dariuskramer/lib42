@@ -14,4 +14,12 @@ typedef struct	s_pool
 	struct s_pool	*next;
 }				t_pool;
 
+typedef struct	s_array
+{
+	void			*data;
+	size_t			len;
+	size_t			capacity;
+	size_t			elem_size;
+}				t_array;
+
 #endif

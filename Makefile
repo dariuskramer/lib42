@@ -64,6 +64,25 @@ SOURCES += ft_strtolower.c
 SOURCES += ft_strtoupper.c
 SOURCES += ft_strisnum.c
 
+# Array
+SRC_SUBDIR += array
+SOURCES += array_create.c
+SOURCES += array_init.c
+SOURCES += array_clone.c
+SOURCES += array_reserve.c
+SOURCES += array_shrink_to_fit.c
+SOURCES += array_truncate.c
+SOURCES += array_clear.c
+SOURCES += array_getset.c
+SOURCES += array_index_of.c
+SOURCES += array_insert.c
+SOURCES += array_replace.c
+SOURCES += array_get_available.c
+SOURCES += array_remove.c
+SOURCES += array_stack.c
+SOURCES += array_find_from.c
+SOURCES += array_swap.c
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src
