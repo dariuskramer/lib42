@@ -107,6 +107,28 @@ SRC_SUBDIR += convert
 SOURCES += ft_toa_base.c
 SOURCES += ft_ato_base.c
 
+# Print
+SRC_SUBDIR += print
+SOURCES += ft_printf.c
+SOURCES += ft_printf_core.c
+SOURCES += ft_dprintf.c
+SOURCES += ft_asprintf.c
+SOURCES += ft_snprintf.c
+SOURCES += safe_write.c
+SOURCES += conv_c.c
+SOURCES += conv_s.c
+SOURCES += conv_wc.c
+SOURCES += conv_wcs.c
+SOURCES += conv_d.c
+SOURCES += conv_uo.c
+SOURCES += conv_x.c
+SOURCES += conv_prc.c
+SOURCES += utf8.c
+SOURCES += str_formatting.c
+SOURCES += int_formatting.c
+SOURCES += parsing.c
+SOURCES += utils.c
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src
