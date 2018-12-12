@@ -1,8 +1,8 @@
 #include <stddef.h>
 #include <sys/types.h>
-#include "structs_42.h"
 #include "memory_42.h"
 #include "str_42.h"
+#include "string_42.h"
 
 size_t		string_remove(t_string *s, size_t pos, size_t n)
 {

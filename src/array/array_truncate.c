@@ -1,4 +1,4 @@
-#include "structs_42.h"
+#include "array_42.h"
 
 t_array		*array_truncate(t_array *a, size_t n)
 {

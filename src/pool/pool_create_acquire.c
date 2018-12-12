@@ -1,8 +1,8 @@
 #include <sys/mman.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "structs_42.h"
 #include "macros_42.h"
+#include "pool_42.h"
 
 #define MMAP_PROT		(PROT_READ|PROT_WRITE)
 

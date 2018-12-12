@@ -1,4 +1,3 @@
-#include "structs_42.h"
 #include "array_42.h"
 
 void	*array_get_available(t_array *a)

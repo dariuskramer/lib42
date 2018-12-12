@@ -1,7 +1,7 @@
 #include <sys/mman.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "structs_42.h"
+#include "pool_42.h"
 
 static inline void	munmap_wrapper(void *p, size_t size)
 {

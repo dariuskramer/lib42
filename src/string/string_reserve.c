@@ -1,7 +1,7 @@
 #include <stddef.h>
-#include "structs_42.h"
 #include "macros_42.h"
 #include "memory_42.h"
+#include "string_42.h"
 
 t_string	*string_reserve(t_string *s, size_t additional)
 {

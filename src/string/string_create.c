@@ -1,6 +1,5 @@
 #include <stddef.h>
 #include <stdlib.h>
-#include "structs_42.h"
 #include "string_42.h"
 
 t_string	*string_create_with_capacity(size_t capacity)

@@ -1,4 +1,3 @@
-#include "structs_42.h"
 #include "string_42.h"
 
 t_string	*string_clone(t_string *dst, const t_string *src)

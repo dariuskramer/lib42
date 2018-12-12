@@ -1,6 +1,6 @@
 #include <sys/types.h>
 #include <stdint.h>
-#include "structs_42.h"
+#include "array_42.h"
 
 ssize_t		array_index_of(const t_array *a, const void *e)
 {

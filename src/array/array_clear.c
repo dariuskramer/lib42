@@ -1,4 +1,4 @@
-#include "structs_42.h"
+#include "array_42.h"
 
 void	array_clear(t_array *a)
 {

@@ -1,7 +1,7 @@
 #include <stddef.h>
-#include "structs_42.h"
 #include "macros_42.h"
 #include "memory_42.h"
+#include "array_42.h"
 
 t_array		*array_reserve(t_array *a, size_t additional)
 {

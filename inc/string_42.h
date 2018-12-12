@@ -3,9 +3,15 @@
 
 # include <stddef.h>
 # include <sys/types.h>
-# include "structs_42.h"
 
 # define STRING_INIT_SIZE		(64U)
+
+typedef struct	s_string
+{
+	char	*str;
+	size_t	len;
+	size_t	capacity;
+}				t_string;
 
 /*
 ** `string_create` and `string_create_with_capacity` malloc a new `t_string`

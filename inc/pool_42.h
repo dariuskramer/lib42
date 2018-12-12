@@ -1,10 +1,20 @@
 #ifndef POOL_42_H
 # define POOL_42_H
 
-# include <stdlib.h>
-# include "structs_42.h"
+# include <stddef.h>
 
 # define POOL_SIZE		(4*4096)
+
+typedef struct	s_pool
+{
+	size_t			allocated_size;
+	size_t			max;
+	size_t			elem_size;
+	size_t			used;
+	size_t			offset;
+	void			*freelist;
+	struct s_pool	*next;
+}				t_pool;
 
 /*
 ** `pool_create` allocates a new `t_pool` and initialize the intern fields

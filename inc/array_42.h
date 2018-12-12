@@ -3,10 +3,17 @@
 
 # include <stddef.h>
 # include <sys/types.h>
-# include "structs_42.h"
 
 # define ARRAY_INIT_SIZE	(8U)
 # define ARRAY_IS_EMPTY(a)	((a)->len == 0)
+
+typedef struct	s_array
+{
+	void		*data;
+	size_t		len;
+	size_t		capacity;
+	size_t		elem_size;
+}				t_array;
 
 /*
 ** `array_create` and `array_create_with_capacity` malloc a new `t_array`

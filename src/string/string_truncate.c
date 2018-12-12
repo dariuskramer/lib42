@@ -1,5 +1,5 @@
 #include <stddef.h>
-#include "structs_42.h"
+#include "string_42.h"
 
 t_string	*string_truncate(t_string *s, size_t n)
 {

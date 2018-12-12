@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include "structs_42.h"
 #include "str_42.h"
 #include "memory_42.h"
 #include "string_42.h"

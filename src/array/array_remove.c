@@ -1,6 +1,5 @@
 #include <stddef.h>
 #include <sys/types.h>
-#include "structs_42.h"
 #include "memory_42.h"
 #include "array_42.h"
 
