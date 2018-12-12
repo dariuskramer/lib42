@@ -98,6 +98,10 @@ SOURCES += string_reserve.c
 SOURCES += string_shrink_to_fit.c
 SOURCES += string_truncate.c
 
+# Debug
+SRC_SUBDIR += debug
+SOURCES += print_memory.c
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src
