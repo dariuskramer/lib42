@@ -83,6 +83,21 @@ SOURCES += array_stack.c
 SOURCES += array_find_from.c
 SOURCES += array_swap.c
 
+# String
+SRC_SUBDIR += string
+SOURCES += string_create.c
+SOURCES += string_init.c
+SOURCES += string_dup.c
+SOURCES += string_clone.c
+SOURCES += string_merge.c
+SOURCES += string_cat.c
+SOURCES += string_replace.c
+SOURCES += string_insert.c
+SOURCES += string_remove.c
+SOURCES += string_reserve.c
+SOURCES += string_shrink_to_fit.c
+SOURCES += string_truncate.c
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src

@@ -22,4 +22,11 @@ typedef struct	s_array
 	size_t			elem_size;
 }				t_array;
 
+typedef struct	s_string
+{
+	char			*str;
+	size_t			len;
+	size_t			capacity;
+}				t_string;
+
 #endif
