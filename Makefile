@@ -50,6 +50,20 @@ else
 	SOURCES += ft_memchr.c
 endif
 
+# Str
+SRC_SUBDIR += str
+SOURCES += ft_strcmp.c
+SOURCES += ft_strlen.c
+SOURCES += ft_strdup.c
+SOURCES += ft_strsub.c
+SOURCES += ft_strchr.c
+SOURCES += ft_strrchr.c
+SOURCES += ft_strrev.c
+SOURCES += ft_strstr.c
+SOURCES += ft_strtolower.c
+SOURCES += ft_strtoupper.c
+SOURCES += ft_strisnum.c
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src
