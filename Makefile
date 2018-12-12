@@ -129,6 +129,10 @@ SOURCES += int_formatting.c
 SOURCES += parsing.c
 SOURCES += utils.c
 
+# Getopt
+SRC_SUBDIR += getopt
+SOURCES += ft_getopt.c
+
 # Generation
 INC_PATH = inc
 SRC_PATH = src
