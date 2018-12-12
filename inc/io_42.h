@@ -14,6 +14,7 @@
 # include "ctype_42.h"
 # include "macros_42.h"
 
+# define GNL_BUFF_SIZE 1024
 # define PRF_BUFSIZ 128
 # define PRF_INDEX(i) (FT_ISLOWER(i) ? ((i) & 0x1F) - 1 : (i) - 39)
 # define SPECIFIERS "csCSdouxXp%"
@@ -56,6 +57,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *c, int fd);
 void	ft_putendl_fd(char const *c, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		get_next_line(int const fd, char **line);
 
 /*
 ** standard printf flavors
