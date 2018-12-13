@@ -184,10 +184,16 @@ $(DEP_PATH)/%.d: %.c | $(DEP_PATH)
 $(BUILD_DIR):
 	@-mkdir -p $@
 
-.PHONY: clean fclean re sanitize unsanitize
+.PHONY: check clean clean-macos fclean re sanitize unsanitize
+
+check: all
+	cd test && ./RunTests.sh
 
 clean:
 	$(RM) -r $(OBJ_PATH)
+
+clean-macos:
+	$(RM) -r *.dSYM/
 
 fclean: clean
 	$(RM) $(NAME)
@@ -202,7 +208,7 @@ unsanitize:
 	$(MAKE) -C ./ re DEBUG=yes
 
 # Tools
-.PHONY: norme valgrind ctags clean-tools
+.PHONY: norme valgrind ctags
 
 norme:
 	@ ! norminette -R CheckTopCommentHeader $(SRC_PATH) | grep -v -B 1 "^Norme"
@@ -218,5 +224,3 @@ callgrind:
 ctags:
 	ctags -R --tag-relative=yes --exclude='.git*' --exclude='test' --exclude='*.o' --exclude='*dSYM' --exclude='doc' --exclude='exercices'
 
-clean-tools:
-	$(RM) -r *.dSYM/
