@@ -5,7 +5,7 @@ set -e
 UNITY_ROOT="./Unity"
 UNITY_SRC="${UNITY_ROOT}/src"
 UNITY_FIXTURE="${UNITY_ROOT}/extras/fixture/src"
-PROJECT_SRC=".."
+PROJECT=".."
 TEST_RUNNERS='test_runners'
 
 cleanup () {
@@ -26,12 +26,12 @@ do
 		-g \
 		-I ${UNITY_SRC} \
 		-I ${UNITY_FIXTURE} \
-		-I ${PROJECT_SRC} \
+		-I ${PROJECT}/inc \
 		-fsanitize=address \
-		../lib42.a \
 		${UNITY_SRC}/unity.o \
 		${UNITY_FIXTURE}/unity_fixture.o \
 		${test_file} \
-		${TEST_RUNNERS}/${runner} && ./a.out | grep -E --color 'FAIL|$'
+		${TEST_RUNNERS}/${runner} \
+		${PROJECT}/lib42.a && ./a.out | grep -E --color 'FAIL|$'
 	echo
 done
