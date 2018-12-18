@@ -24,8 +24,6 @@ void	*list_insert_at(t_list *list, size_t index, const void *elem)
 		return (NULL);
 	if (index == 0)
 		return (list_push_front(list, elem));
-	else if (index == list->len - 1)
-		return (list_push_back(list, elem));
 	new_node = list_internal_new_node_with_copy(list, elem);
 	if (new_node == NULL)
 		return (NULL);

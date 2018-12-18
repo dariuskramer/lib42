@@ -3,6 +3,16 @@
 #include "memory_42.h"
 #include "list_42.h"
 
+static t_list_node	*internal_remove_last(t_list *list)
+{
+	t_list_node	*node;
+
+	node = list->head;
+	list->head = NULL;
+	list->tail = NULL;
+	return (node);
+}
+
 static t_list_node	*internal_remove_head(t_list *list)
 {
 	t_list_node	*node;
@@ -45,7 +55,9 @@ t_list				*list_remove_at(t_list *list, size_t index, void *removed)
 
 	if (index >= list->len)
 		return (NULL);
-	if (index == 0)
+	else if (list->len == 1)
+		node = internal_remove_last(list);
+	else if (index == 0)
 		node = internal_remove_head(list);
 	else if (index == list->len - 1)
 		node = internal_remove_tail(list);
@@ -58,5 +70,5 @@ t_list				*list_remove_at(t_list *list, size_t index, void *removed)
 		ft_memcpy(removed, data, list->elem_size);
 		list->pool = pool_release_block(list->pool, node);
 	}
-	return (removed);
+	return (list);
 }

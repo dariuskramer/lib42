@@ -75,15 +75,15 @@ void	*list_push_back(t_list *list, const void *elem);
 
 /*
 ** Pop the element at the head of the list.
-** Returns the `poped_elem` pointer or NULL
+** Returns the list pointer or NULL
 */
-void	*list_pop_front(t_list *list, void *poped_elem);
+t_list	*list_pop_front(t_list *list, void *poped_elem);
 
 /*
 ** Pop the element at the tail of the list.
-** Returns the `poped_elem` pointer or NULL
+** Returns the list pointer or NULL
 */
-void	*list_pop_back(t_list *list, void *poped_elem);
+t_list	*list_pop_back(t_list *list, void *poped_elem);
 
 /*
 ** Insert an element at the specified index.

@@ -23,6 +23,8 @@ void	*list_get_first(const t_list *list)
 {
 	void	*data;
 
+	if (list->len == 0)
+		return (NULL);
 	data = LIST_NODE_DATA(list->head);
 	return (data);
 }
@@ -31,6 +33,8 @@ void	*list_get_last(const t_list *list)
 {
 	void	*data;
 
+	if (list->len == 0)
+		return (NULL);
 	data = LIST_NODE_DATA(list->tail);
 	return (data);
 }
