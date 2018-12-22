@@ -143,6 +143,7 @@ SOURCES += list_new_node.c
 SOURCES += list_pop.c
 SOURCES += list_push.c
 SOURCES += list_remove.c
+SOURCES += list_map.c
 
 # Getopt
 SRC_SUBDIR += getopt

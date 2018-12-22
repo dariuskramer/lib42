@@ -5,7 +5,7 @@
 # include "pool_42.h"
 
 # define LIST_NODE_SIZE(e)	((e) + sizeof(t_list_node))
-# define LIST_NODE_DATA(e)	((e) + 1)
+# define LIST_NODE_DATA(e)	((void*)((e) + 1))
 
 typedef struct	s_list_node
 {
@@ -21,6 +21,8 @@ typedef struct	s_list
 	size_t				len;
 	size_t				elem_size;
 }				t_list;
+
+typedef void	*(*list_map_func)(void*);
 
 /*
 ** Allocate a new `t_list` and initialize all internal fields
@@ -103,5 +105,21 @@ t_list	*list_remove_at(t_list *list, size_t index, void *removed);
 ** Returns NULL in case of error
 */
 t_list	*list_clear(t_list *list);
+
+/*
+** Apply the function `f` to each element of the list and build a list with
+** the results.
+** Returns a new list or NULL in case of error
+*/
+t_list	*list_map(const t_list *list, void *(*f)(void*), size_t new_elem_size);
+
+/*
+** Apply the function `f` to each element of the list.
+** The function `f` shall takes 2 parameters of the same type
+** and return one of the same type.
+** Returns the folding of the list or NULL in case of error
+*/
+void	*list_fold_left(const t_list *list, void *(*f)(void*, void*),
+		void *init_val);
 
 #endif
