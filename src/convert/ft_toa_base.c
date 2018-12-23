@@ -1,5 +1,5 @@
 #include <stddef.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include "macros_42.h"
 #include "memory_42.h"
 #include "str_42.h"
