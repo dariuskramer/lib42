@@ -114,4 +114,9 @@ t_string	*string_reserve(t_string *s, size_t additional);
 t_string	*string_shrink_to_fit(t_string *s);
 t_string	*string_truncate(t_string *s, size_t n);
 
+/*
+** Add the formatted string to `s`, using `ft_vasprintf`
+*/
+t_string	*string_fmt(t_string *s, const char *format, ...);
+
 #endif
