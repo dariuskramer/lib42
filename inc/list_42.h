@@ -22,8 +22,8 @@ typedef struct	s_list
 	size_t				elem_size;
 }				t_list;
 
-typedef void	*(list_map_func*)(const void*);
-typedef void	(list_apply_func*)(void*);
+typedef void	*(*list_map_func)(const void*);
+typedef void	(*list_apply_func)(void*);
 
 /*
 ** Allocate a new `t_list` and initialize all internal fields
