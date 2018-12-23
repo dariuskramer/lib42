@@ -15,6 +15,9 @@ trap cleanup EXIT
 
 mkdir -p ${TEST_RUNNERS}
 
+cc -I ${UNITY_SRC} -I ${UNITY_FIXTURE} -c ${UNITY_SRC}/unity.c
+cc -I ${UNITY_SRC} -I ${UNITY_FIXTURE} -c ${UNITY_FIXTURE}/unity_fixture.c
+
 export CFLAGS="-g -fsanitize=address -I ${PROJECT}/inc -I ${UNITY_SRC} -I ${UNITY_FIXTURE}"
 
 # Utils for tests
@@ -29,8 +32,8 @@ do
 
 	ruby "$UNITY_ROOT/auto/generate_test_runner.rb" $test_file ${TEST_RUNNERS}/${test_name}_Runner.c
 	cc $CFLAGS \
-		${UNITY_SRC}/unity.o \
-		${UNITY_FIXTURE}/unity_fixture.o \
+		unity.o \
+		unity_fixture.o \
 		utils.o \
 		${test_file} \
 		${TEST_RUNNERS}/${runner} \

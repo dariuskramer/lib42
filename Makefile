@@ -189,7 +189,7 @@ $(BUILD_DIR):
 
 .PHONY: check clean clean-macos fclean re sanitize unsanitize
 
-check: all
+check: sanitize
 	cd test && ./RunTests.sh
 
 clean:
