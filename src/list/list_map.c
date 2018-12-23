@@ -1,8 +1,8 @@
 #include <stddef.h>
 #include "list_42.h"
 
-#include <stdio.h>
-t_list	*list_map(const t_list *list, void *(*f)(void*), size_t new_elem_size)
+t_list	*list_map(const t_list *list, void *(*f)(const void*),
+		size_t new_elem_size)
 {
 	t_list		*new_list;
 	t_list_node	*node;
