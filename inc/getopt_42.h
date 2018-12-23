@@ -18,6 +18,7 @@ typedef struct	s_opt
 	bool		print_errmsg;
 }				t_opt;
 
-int	ft_getopt(const char *const *av, const char *optstr, t_opt *opt);
+int				ft_getopt(const char *const *av, const char *optstr,
+		t_opt *opt);
 
 #endif

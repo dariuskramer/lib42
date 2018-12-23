@@ -6,11 +6,11 @@
 
 # define FATAL_MALLOC	"fatal: malloc failed !"
 
-typedef enum e_return_code
+typedef enum	e_return_code
 {
 	OK_,
 	ERROR_,
-} t_ret;
+}				t_ret;
 
 void	error_register_project_name(const char *project_name);
 void	error_set_context(const char *format, ...);

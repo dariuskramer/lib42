@@ -16,7 +16,7 @@ static void	internal_insert_at(t_list *list, size_t index, t_list_node *new)
 	current->prev = new;
 }
 
-void	*list_insert_at(t_list *list, size_t index, const void *elem)
+void		*list_insert_at(t_list *list, size_t index, const void *elem)
 {
 	t_list_node	*new_node;
 
