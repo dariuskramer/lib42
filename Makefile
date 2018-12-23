@@ -145,6 +145,7 @@ SOURCES += list_push.c
 SOURCES += list_remove.c
 SOURCES += list_map.c
 SOURCES += list_apply.c
+SOURCES += list_fold.c
 
 # Getopt
 SRC_SUBDIR += getopt

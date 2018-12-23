@@ -24,6 +24,7 @@ typedef struct	s_list
 
 typedef void	*(*t_list_map_func)(const void*);
 typedef void	(*t_list_apply_func)(void*);
+typedef void	*(*t_list_fold_func)(void*, void*);
 
 /*
 ** Allocate a new `t_list` and initialize all internal fields
@@ -122,7 +123,7 @@ t_list	*list_map(const t_list *list, void *(*f)(const void*),
 ** Returns the folding of the list or NULL in case of error
 */
 void	*list_fold_left(const t_list *list, void *(*f)(void*, void*),
-		void *init_val); // TODO implementation test
+		void *init_val);
 
 /*
 ** Apply the function `f` to each element of the list.
