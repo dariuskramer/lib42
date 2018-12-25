@@ -2,6 +2,7 @@
 # define LIST_42_H
 
 # include <stddef.h>
+# include <stdbool.h>
 # include "pool_42.h"
 
 # define LIST_NODE_SIZE(e)	((e) + sizeof(t_list_node))
@@ -25,6 +26,7 @@ typedef struct			s_list
 typedef void			*(*t_list_map_func)(const void*);
 typedef void			(*t_list_apply_func)(void*);
 typedef void			*(*t_list_fold_func)(void*, void*);
+typedef bool			(*t_list_filter_func)(void*);
 
 t_list_node				*list_internal_new_node_with_copy(t_list *list,
 		const void *elem);
@@ -133,5 +135,12 @@ void					*list_fold_left(const t_list *list,
 ** TODO: test
 */
 void					list_apply(t_list *list, void (*f)(void*));
+
+/*
+** Construct a new list with the elements that match the function `f`
+** Returns a new list or NULL in case of error
+** TODO: test
+*/
+t_list					*list_filter(const t_list *list, bool (*f)(void*));
 
 #endif
