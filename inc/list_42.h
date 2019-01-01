@@ -24,10 +24,10 @@ typedef struct			s_list
 	size_t				elem_size;
 }						t_list;
 
-typedef void			*(*t_list_map_func)(const void*, va_list ap);
-typedef void			(*t_list_apply_func)(void*, va_list ap);
-typedef void			*(*t_list_fold_func)(void*, void*, va_list ap);
-typedef bool			(*t_list_filter_func)(void*, va_list ap);
+typedef void			*(*t_list_map_func)(const void *data, va_list ap);
+typedef void			(*t_list_apply_func)(void *data, va_list ap);
+typedef void			*(*t_list_fold_func)(void *acc, void *data, va_list ap);
+typedef bool			(*t_list_filter_func)(const void *data, va_list ap);
 
 t_list_node				*list_internal_new_node_with_copy(t_list *list,
 		const void *elem);
