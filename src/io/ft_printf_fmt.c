@@ -1,7 +1,5 @@
 #include "io_42.h"
 
-static size_t	g_bufsize = PRF_BUFSIZ;
-
 static int	tables_dispatch(t_string *b, t_format *fmt, va_list ap)
 {
 	static char	*spec = "csCSdouxXp%";
@@ -38,30 +36,23 @@ static char	*parse_fmt(char *format, t_format *fmt)
 	return (format + 1);
 }
 
-void		ft_printf_init(size_t initsize)
-{
-	if (initsize > 0)
-		g_bufsize = initsize;
-}
-
-ssize_t		ft_printf_core(const char *format, va_list ap, char **ret)
+t_string	*ft_printf_fmt(t_string *buf, const char *format, va_list ap)
 {
 	t_format	fmt;
-	t_string	b;
 	char		*pconv;
 
-	string_init_with_capacity(&b, g_bufsize);
 	while ((pconv = ft_strchr(format, '%')) != NULL)
 	{
 		ft_memset(&fmt, 0, sizeof(fmt));
-		string_ncat(&b, format, (size_t)(pconv - format));
+		if (string_ncat(buf, format, (size_t)(pconv - format)) == NULL)
+			return (NULL);
 		format = parse_fmt(pconv + 1, &fmt);
 		if (fmt.conv != '\0')
-			if (tables_dispatch(&b, &fmt, ap) == -1)
-				return (cleanup_buf(&b));
+			if (tables_dispatch(buf, &fmt, ap) == -1)
+				return (NULL);
 	}
 	if (*format != '\0')
-		string_ncat(&b, format, ft_strlen(format));
-	*ret = b.str;
-	return ((ssize_t)b.len);
+		if (string_ncat(buf, format, ft_strlen(format)) == NULL)
+			return (NULL);
+	return (buf);
 }

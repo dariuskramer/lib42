@@ -14,8 +14,6 @@
 # include "ctype_42.h"
 # include "macros_42.h"
 
-# define PRF_BUFSIZ 128
-# define PRF_INDEX(i) (FT_ISLOWER(i) ? ((i) & 0x1F) - 1 : (i) - 39)
 # define SPECIFIERS "csCSdouxXp%"
 
 # ifndef MB_LEN_MAX
@@ -61,28 +59,14 @@ void			ft_putnbr_fd(int n, int fd);
 ** standard printf flavors
 */
 ssize_t			ft_printf(const char *format, ...);
-ssize_t			ft_asprintf(char **ret, const char *format, ...);
 ssize_t			ft_dprintf(int fd, const char *format, ...);
-ssize_t			ft_snprintf(char *str, size_t size, const char *format, ...);
-
-/*
-** standard printf flavors with va_arg
-*/
 ssize_t			ft_vprintf(const char *format, va_list ap);
-ssize_t			ft_vasprintf(char **ret, const char *format, va_list ap);
 ssize_t			ft_vdprintf(int fd, const char *format, va_list ap);
-ssize_t			ft_vsnprintf(char *str, size_t size, const char *format,
-		va_list ap);
 
 /*
 ** internals
 */
-ssize_t			ft_printf_internal_safe_write(const char *s, size_t len,
-		int fd);
-void			ft_printf_init(size_t initsize);
-ssize_t			ft_printf_core(const char *format, va_list ap, char **ret);
-void			exit_printf(int code);
-int				cleanup_buf(t_string *pb);
+t_string		*ft_printf_fmt(t_string *buf, const char *format, va_list ap);
 int				parse_conv(char c, t_format *fmt);
 char			*parse_flags(char *format, t_format *fmt);
 char			*parse_min_width(char *format, t_format *fmt);

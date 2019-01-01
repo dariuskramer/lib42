@@ -1,3 +1,4 @@
+#include "error_42.h"
 #include "io_42.h"
 
 int	conv_wcs(t_string *pb, t_format *fmt, va_list ap)
@@ -11,7 +12,7 @@ int	conv_wcs(t_string *pb, t_format *fmt, va_list ap)
 		wcs = L"(null)";
 	arglenmax = ft_wcslen(wcs) * sizeof(wchar_t) + 1;
 	if ((arg = (char*)malloc(arglenmax)) == 0)
-		exit_printf(4);
+		die(FATAL_MALLOC);
 	wlen = (fmt->prec < 0) ? arglenmax : (size_t)fmt->prec;
 	if ((wlen = ft_wcstombs(arg, wcs, wlen)) == (size_t)-1)
 		return (-1);

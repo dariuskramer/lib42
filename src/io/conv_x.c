@@ -1,3 +1,4 @@
+#include "error_42.h"
 #include "io_42.h"
 
 static int	formatting_x(t_string *pb, t_format *fmt, char *arg, size_t arglen)
@@ -30,8 +31,8 @@ int			conv_x(t_string *pb, t_format *fmt, va_list ap)
 		arg = ft_utoa_base((unsigned short)va_arg(ap, unsigned), 16);
 	else
 		arg = ft_utoa_base(va_arg(ap, unsigned long), 16);
-	if (!arg)
-		exit_printf(8);
+	if (arg == NULL)
+		die(FATAL_MALLOC);
 	if (fmt->conv == 'X')
 		arg = ft_strtoupper(arg);
 	formatting_x(pb, fmt, arg, ft_strlen(arg));
@@ -44,8 +45,8 @@ int			conv_p(t_string *pb, t_format *fmt, va_list ap)
 	char	*arg;
 
 	arg = ft_utoa_base((unsigned long long)va_arg(ap, void*), 16);
-	if (!arg)
-		exit_printf(9);
+	if (arg == NULL)
+		die(FATAL_MALLOC);
 	fmt->f_sharp = 1;
 	formatting_x(pb, fmt, arg, ft_strlen(arg));
 	free(arg);

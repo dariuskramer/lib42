@@ -1,3 +1,4 @@
+#include "error_42.h"
 #include "io_42.h"
 
 static int	formatting_o(t_string *pb, t_format *fmt, char *arg, size_t arglen)
@@ -34,8 +35,8 @@ int			conv_u(t_string *pb, t_format *fmt, va_list ap)
 		arg = ft_utoa_base((unsigned short)va_arg(ap, unsigned), 10);
 	else
 		arg = ft_utoa_base(va_arg(ap, unsigned long), 10);
-	if (!arg)
-		exit_printf(6);
+	if (arg == NULL)
+		die(FATAL_MALLOC);
 	formatting_u(pb, fmt, arg, ft_strlen(arg));
 	free(arg);
 	return (1);
@@ -53,8 +54,8 @@ int			conv_o(t_string *pb, t_format *fmt, va_list ap)
 		arg = ft_utoa_base((unsigned short)va_arg(ap, unsigned), 8);
 	else
 		arg = ft_utoa_base(va_arg(ap, unsigned long), 8);
-	if (!arg)
-		exit_printf(7);
+	if (arg == NULL)
+		die(FATAL_MALLOC);
 	formatting_o(pb, fmt, arg, ft_strlen(arg));
 	free(arg);
 	return (1);

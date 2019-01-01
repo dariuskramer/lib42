@@ -4,14 +4,11 @@
 
 t_string	*string_fmt(t_string *s, const char *format, ...)
 {
-	char	*ret;
-	ssize_t	len;
 	va_list	ap;
 
 	va_start(ap, format);
-	len = ft_vasprintf(&ret, format, ap);
-	if (len == -1)
+	if (ft_printf_fmt(s, format, ap) == NULL)
 		return (NULL);
 	va_end(ap);
-	return (string_ncat(s, ret, (size_t)len));
+	return (s);
 }

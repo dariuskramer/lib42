@@ -113,11 +113,7 @@ SRC_SUBDIR += io
 SOURCES += ft_put.c
 SOURCES += ft_put_fd.c
 SOURCES += ft_printf.c
-SOURCES += ft_printf_core.c
-SOURCES += ft_dprintf.c
-SOURCES += ft_asprintf.c
-SOURCES += ft_snprintf.c
-SOURCES += safe_write.c
+SOURCES += ft_printf_fmt.c
 SOURCES += conv_c.c
 SOURCES += conv_s.c
 SOURCES += conv_wc.c
@@ -130,7 +126,6 @@ SOURCES += utf8.c
 SOURCES += str_formatting.c
 SOURCES += int_formatting.c
 SOURCES += parsing.c
-SOURCES += utils.c
 
 # List
 SRC_SUBDIR += list

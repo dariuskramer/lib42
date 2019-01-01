@@ -1,3 +1,4 @@
+#include "error_42.h"
 #include "io_42.h"
 
 static int	formatting_d(t_string *pb, t_format *fmt, char *arg, size_t arglen)
@@ -32,8 +33,8 @@ int			conv_d(t_string *pb, t_format *fmt, va_list ap)
 		arg = ft_stoa_base((short)va_arg(ap, int), 10);
 	else
 		arg = ft_stoa_base(va_arg(ap, long), 10);
-	if (!arg)
-		exit_printf(5);
+	if (arg == NULL)
+		die(FATAL_MALLOC);
 	formatting_d(pb, fmt, arg, ft_strlen(arg));
 	free(arg);
 	return (1);
