@@ -28,6 +28,7 @@ typedef void			*(*t_list_map_func)(const void *data, va_list ap);
 typedef void			(*t_list_apply_func)(void *data, va_list ap);
 typedef void			*(*t_list_fold_func)(void *acc, void *data, va_list ap);
 typedef bool			(*t_list_filter_func)(const void *data, va_list ap);
+typedef int				(*t_list_compare)(const void *e1, const void *e2);
 
 t_list_node				*list_internal_new_node_with_copy(t_list *list,
 		const void *elem);
@@ -144,5 +145,17 @@ void					list_apply(t_list *list, t_list_apply_func f, ...);
 */
 t_list					*list_filter(const t_list *list, t_list_filter_func f,
 		...);
+
+/*
+** Swap the 2 elements at index `e1` and `e2`
+** TODO: test
+*/
+t_list					*list_swap(t_list *list, size_t e1, size_t e2);
+
+/*
+** Sort the list according to the compare function `f`
+** TODO: test
+*/
+t_list					*list_sort(t_list *list, t_list_compare f);
 
 #endif
