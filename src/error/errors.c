@@ -33,7 +33,7 @@ void	error_set_context(const char *format, ...)
 
 	assert(format != NULL);
 	va_start(args, format);
-	if (string_init(&buf) == NULL || ft_printf_fmt(&buf, format, args) == NULL)
+	if (string_init(&buf) == NULL || io_fmt(&buf, format, args) == NULL)
 		die(FATAL_MALLOC);
 	g_context = buf.str;
 	va_end(args);

@@ -67,7 +67,7 @@ ssize_t			ft_vdprintf(int fd, const char *format, va_list ap);
 /*
 ** internals
 */
-t_string		*ft_printf_fmt(t_string *buf, const char *format, va_list ap);
+t_string		*io_fmt(t_string *buf, const char *format, va_list ap);
 int				parse_conv(char c, t_format *fmt);
 char			*parse_flags(char *format, t_format *fmt);
 char			*parse_min_width(char *format, t_format *fmt);

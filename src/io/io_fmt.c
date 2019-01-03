@@ -36,7 +36,7 @@ static char	*parse_fmt(char *format, t_format *fmt)
 	return (format + 1);
 }
 
-t_string	*ft_printf_fmt(t_string *buf, const char *format, va_list ap)
+t_string	*io_fmt(t_string *buf, const char *format, va_list ap)
 {
 	t_format	fmt;
 	char		*pconv;

@@ -18,7 +18,7 @@ ssize_t	ft_vprintf(const char *format, va_list ap)
 
 	if (string_init(&buf) == NULL)
 		return (-1);
-	if (ft_printf_fmt(&buf, format, ap) == NULL)
+	if (io_fmt(&buf, format, ap) == NULL)
 	{
 		string_shutdown(&buf);
 		return (-1);
@@ -43,7 +43,7 @@ ssize_t	ft_vdprintf(int fd, const char *format, va_list ap)
 
 	if (string_init(&buf) == NULL)
 		return (-1);
-	if (ft_printf_fmt(&buf, format, ap) == NULL)
+	if (io_fmt(&buf, format, ap) == NULL)
 	{
 		string_shutdown(&buf);
 		return (-1);
