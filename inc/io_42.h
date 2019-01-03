@@ -46,6 +46,7 @@ typedef struct	s_format
 
 typedef	int		(*t_fc)(t_string*, t_format*, va_list);
 
+ssize_t			io_safe_write(const t_string *buf, int fd);
 void			ft_putchar(char c);
 void			ft_putstr(char const *c);
 void			ft_putendl(char const *c);
