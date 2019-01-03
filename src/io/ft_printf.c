@@ -1,5 +1,5 @@
+#include <unistd.h>
 #include "io_42.h"
-#define STDOUT_FD	(1)
 
 ssize_t	ft_printf(const char *format, ...)
 {
@@ -23,7 +23,7 @@ ssize_t	ft_vprintf(const char *format, va_list ap)
 		string_shutdown(&buf);
 		return (-1);
 	}
-	return (io_safe_write(&buf, STDOUT_FD));
+	return (io_safe_write(&buf, STDOUT_FILENO));
 }
 
 ssize_t	ft_dprintf(int fd, const char *format, ...)
