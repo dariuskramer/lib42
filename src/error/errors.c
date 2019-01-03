@@ -44,11 +44,12 @@ void	error_print(const char *msg)
 	assert(g_project_name != NULL);
 	if (g_context == NULL)
 	{
-		ft_dprintf(2, "%s: %s\n", g_project_name, msg);
+		ft_dprintf(STDERR_FILENO, "%s: %s\n", g_project_name, msg);
 	}
 	else
 	{
-		ft_dprintf(2, "%s: %s: %s\n", g_project_name, msg, g_context);
+		ft_dprintf(STDERR_FILENO, "%s: %s: %s\n", g_project_name, msg,
+				g_context);
 		free(g_context);
 		g_context = NULL;
 	}
