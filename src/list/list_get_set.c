@@ -10,7 +10,7 @@ void	*list_get_at(const t_list *list, size_t index)
 	if (index >= list->len)
 		return (NULL);
 	node = list->head;
-	while (index)
+	while (index > 0)
 	{
 		node = node->next;
 		index -= 1;
