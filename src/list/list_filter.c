@@ -18,11 +18,13 @@ t_list	*list_filter(const t_list *list, t_list_filter_func f, ...)
 	{
 		data = LIST_NODE_DATA(node);
 		if (f(data, ap))
+		{
 			if (list_push_back(new_list, data) == NULL)
 			{
 				list_destroy(new_list);
 				return (NULL);
 			}
+		}
 		node = node->next;
 	}
 	va_end(ap);
