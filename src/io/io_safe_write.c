@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include "string_42.h"
 
-ssize_t	safe_write(const t_string *buf, int fd)
+ssize_t	io_safe_write(const t_string *buf, int fd)
 {
 	char	*s;
 	ssize_t	ret;
