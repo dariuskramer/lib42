@@ -27,19 +27,8 @@ void test_ListSort_SimpleIntegers(void)
 
 	list = list_create(sizeof(int));
 
-	printf("arr:");
 	for (int i = 0; i < sizeof(arr)/sizeof(int); ++i)
-	{
-		printf(" %d", arr[i]);
 		list_push_back(list, &arr[i]);
-	}
-	printf("\n");
-	TEST_ASSERT_EQUAL(5, list->len);
-	TEST_ASSERT_NOT_NULL(list->head);
-	TEST_ASSERT_NOT_NULL(list->head->next);
-	TEST_ASSERT_NOT_NULL(list->head->next->next);
-	TEST_ASSERT_NOT_NULL(list->head->next->next->next);
-	TEST_ASSERT_NOT_NULL(list->head->next->next->next->next);
 
 	void *ret = list_sort(list, (t_list_compare)&compare_int);
 
