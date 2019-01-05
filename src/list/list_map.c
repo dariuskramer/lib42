@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include "list_42.h"
 
-t_list	*list_map(const t_list *list, t_list_map_func f, size_t new_elem_size,
+t_list	*list_map(const t_list *list, t_list_map f, size_t new_elem_size,
 		...)
 {
 	va_list		ap;

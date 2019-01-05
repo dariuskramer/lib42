@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include "list_42.h"
 
-void	list_apply(t_list *list, t_list_apply_func f, ...)
+void	list_apply(t_list *list, t_list_apply f, ...)
 {
 	va_list		ap;
 	t_list_node	*node;

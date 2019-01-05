@@ -24,10 +24,10 @@ typedef struct			s_list
 	size_t				elem_size;
 }						t_list;
 
-typedef void			*(*t_list_map_func)(const void *data, va_list ap);
-typedef void			(*t_list_apply_func)(void *data, va_list ap);
-typedef void			*(*t_list_fold_func)(void *acc, void *data, va_list ap);
-typedef bool			(*t_list_filter_func)(const void *data, va_list ap);
+typedef void			*(*t_list_map)(const void *data, va_list ap);
+typedef void			(*t_list_apply)(void *data, va_list ap);
+typedef void			*(*t_list_fold)(void *acc, void *data, va_list ap);
+typedef bool			(*t_list_filter)(const void *data, va_list ap);
 typedef int				(*t_list_compare)(const void *e1, const void *e2);
 
 t_list_node				*list_internal_new_node_with_copy(t_list *list,
@@ -118,7 +118,7 @@ t_list					*list_clear(t_list *list);
 ** the results.
 ** Returns a new list or NULL in case of error
 */
-t_list					*list_map(const t_list *list, t_list_map_func f,
+t_list					*list_map(const t_list *list, t_list_map f,
 		size_t new_elem_size, ...);
 
 /*
@@ -127,7 +127,7 @@ t_list					*list_map(const t_list *list, t_list_map_func f,
 ** and return one of the same type.
 ** Returns the folding of the list or NULL in case of error
 */
-void					*list_fold_left(const t_list *list, t_list_fold_func f,
+void					*list_fold_left(const t_list *list, t_list_fold f,
 		void *init_val, ...);
 
 /*
@@ -136,15 +136,14 @@ void					*list_fold_left(const t_list *list, t_list_fold_func f,
 ** Generally used for side effect.
 ** TODO: test
 */
-void					list_apply(t_list *list, t_list_apply_func f, ...);
+void					list_apply(t_list *list, t_list_apply f, ...);
 
 /*
 ** Construct a new list with the elements that match the function `f`
 ** Returns a new list or NULL in case of error
 ** TODO: test
 */
-t_list					*list_filter(const t_list *list, t_list_filter_func f,
-		...);
+t_list					*list_filter(const t_list *list, t_list_filter f, ...);
 
 /*
 ** Swap the 2 elements at index `e1` and `e2`

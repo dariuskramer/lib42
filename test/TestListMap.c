@@ -61,7 +61,7 @@ void test_ListMap_UpperAllStrings(void)
 
 	// Create mapped list
 	t_list	*new_list;
-	new_list = list_map(&list, (t_list_map_func)&wrapper_string_upper, sizeof(char*));
+	new_list = list_map(&list, (t_list_map)&wrapper_string_upper, sizeof(char*));
 
 	// Check list struct
 	checkListIntegrity(&list, s, len_s);
@@ -151,7 +151,7 @@ void test_ListMap_ConvertDumbStruct(void)
 
 	// Create mapped list
 	t_list	*new_list;
-	new_list = list_map(old_list, (t_list_map_func)&convert, sizeof(struct s_dumb));
+	new_list = list_map(old_list, (t_list_map)&convert, sizeof(struct s_dumb));
 
 	// Check list struct
 	TEST_ASSERT_NOT_NULL(new_list);

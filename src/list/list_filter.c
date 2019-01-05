@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include "list_42.h"
 
-t_list	*list_filter(const t_list *list, t_list_filter_func f, ...)
+t_list	*list_filter(const t_list *list, t_list_filter f, ...)
 {
 	va_list		ap;
 	t_list		*new_list;

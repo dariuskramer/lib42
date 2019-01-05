@@ -50,7 +50,7 @@ void test_ListFoldLeft_StringLength(void)
 	size_t	*len;
 
 	// List fold
-	len = list_fold_left(&list, (t_list_fold_func)&wrapper, &init);
+	len = list_fold_left(&list, (t_list_fold)&wrapper, &init);
 
 	// Expected
 	for (size_t i = 0; i < len_s; ++i) expected += strlen(s[i]);
