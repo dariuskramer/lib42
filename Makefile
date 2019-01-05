@@ -160,29 +160,20 @@ vpath %.c $(addprefix $(SRC_PATH)/,$(SRC_SUBDIR))
 OBJ_PATH = .obj
 OBJECTS = $(SOURCES:%.c=$(OBJ_PATH)/%.o)
 
-# Dependencies
-DEP_PATH = .dep
-DEPS = $(SOURCES:%.c=$(DEP_PATH)/%.d)
-
-BUILD_DIR = $(OBJ_PATH) $(DEP_PATH)
+BUILD_DIR = $(OBJ_PATH)
 
 # Rules
 .PHONY: all
 
 .SECONDARY: $(OBJECTS)
 
-all: $(DEPS) $(NAME)
-
--include $(DEPS)
+all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar rcs $@ $^
 
 $(OBJECTS): $(OBJ_PATH)/%.o: %.c | $(OBJ_PATH)
 	$(CC) $(CFLAGS) -o $@ -c $<
-
-$(DEP_PATH)/%.d: %.c | $(DEP_PATH)
-	$(CC) $(CFLAGS) -MM $< -MT $(OBJ_PATH)/$*.o -MF $@
 
 $(BUILD_DIR):
 	@-mkdir -p $@
@@ -200,7 +191,6 @@ clean-macos:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) $(DEPS)
 
 re: fclean all
 
