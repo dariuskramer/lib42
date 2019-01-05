@@ -7,7 +7,7 @@
 # include "pool_42.h"
 
 # define LIST_NODE_SIZE(e)	((e) + sizeof(t_list_node))
-# define LIST_NODE_DATA(e)	((void*)((e) + 1))
+# define LIST_NODE_DATA(e)	((void*)(((t_list_node*)e) + 1))
 
 typedef struct			s_list_node
 {
