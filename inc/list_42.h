@@ -157,4 +157,17 @@ t_list					*list_swap(t_list *list, size_t e1, size_t e2);
 */
 t_list					*list_sort(t_list *list, t_list_compare f);
 
+/*
+** Returns a new list which contains each unique members of the list `list`
+*/
+t_list					*list_uniq_sorted(const t_list *list, t_list_compare f);
+t_list					*list_uniq_unsorted(const t_list *list,
+		t_list_compare f);
+
+/*
+** Returns a copy of the list `list`
+** TODO: test
+*/
+t_list					*list_copy(const t_list *list);
+
 #endif
