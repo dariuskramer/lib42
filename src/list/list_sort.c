@@ -31,7 +31,7 @@ inline static t_list_node	*split_in_half(t_list_node *head)
 		fast = fast->next->next;
 	}
 	middle = slow->next;
-	slow->next = NULL; 
+	slow->next = NULL;
 	return (middle);
 }
 

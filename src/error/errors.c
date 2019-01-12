@@ -12,7 +12,7 @@
 #include "io_42.h"
 #include "error_42.h"
 
-static char 		*g_context;
+static char			*g_context;
 static const char	*g_project_name;
 
 void	die(const char *msg)

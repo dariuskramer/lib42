@@ -1,7 +1,6 @@
 #include <stddef.h>
 #include "list_42.h"
 
-#include <stdio.h>
 t_list	*list_uniq_sorted(const t_list *list, t_list_compare cmp)
 {
 	t_list		*new;
