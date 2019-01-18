@@ -176,3 +176,133 @@ void test_ListUniqSorted_RandomList(void)
 
 	list_destroy(new);
 }
+
+void test_ListUniqUnsorted_OnlyOneElement(void)
+{
+	t_list		*new;
+	int			numbers[] = {42};
+	size_t		numbers_len = sizeof(numbers) / sizeof(numbers[0]);
+
+	// fill list
+	fillList(&list, numbers, numbers_len);
+
+	// create uniq list
+	new = list_uniq_unsorted(&list, (t_list_compare)&compare);
+
+	// check origin list
+	checkListIntegrity(&list, numbers, numbers_len, "origin");
+
+	// check uniq list
+	checkListIntegrity(new, numbers, numbers_len, "new");
+
+	list_destroy(new);
+}
+
+void test_ListUniqUnsorted_AllElementsAreTheSame(void)
+{
+	t_list		*new;
+	int			numbers[] = {42, 42, 42};
+	size_t		numbers_len = sizeof(numbers) / sizeof(numbers[0]);
+
+	// fill list
+	fillList(&list, numbers, numbers_len);
+
+	// create uniq list
+	new = list_uniq_unsorted(&list, (t_list_compare)&compare);
+
+	// check origin list
+	checkListIntegrity(&list, numbers, numbers_len, "origin");
+
+	// check uniq list
+	int			numbers2[] = {42};
+	checkListIntegrity(new, numbers, 1, "new");
+
+	list_destroy(new);
+}
+
+void test_ListUniqUnsorted_AllElementsAreDifferent(void)
+{
+	t_list		*new;
+	int			numbers[] = {44, 33, 22};
+	size_t		numbers_len = sizeof(numbers) / sizeof(numbers[0]);
+
+	// fill list
+	fillList(&list, numbers, numbers_len);
+
+	// create uniq list
+	new = list_uniq_unsorted(&list, (t_list_compare)&compare);
+
+	// check origin list
+	checkListIntegrity(&list, numbers, numbers_len, "origin");
+
+	// check uniq list
+	checkListIntegrity(new, numbers, numbers_len, "new");
+
+	list_destroy(new);
+}
+
+void test_ListUniqUnsorted_TwoElementsUnique(void)
+{
+	t_list		*new;
+	int			numbers[] = {42, 42};
+	size_t		numbers_len = sizeof(numbers) / sizeof(numbers[0]);
+
+	// fill list
+	fillList(&list, numbers, numbers_len);
+
+	// create uniq list
+	new = list_uniq_unsorted(&list, (t_list_compare)&compare);
+
+	// check origin list
+	checkListIntegrity(&list, numbers, numbers_len, "origin");
+
+	// check uniq list
+	int			numbers2[] = {42};
+	checkListIntegrity(new, numbers2, 1, "new");
+
+	list_destroy(new);
+}
+
+void test_ListUniqUnsorted_TwoElementsDifferent(void)
+{
+	t_list		*new;
+	int			numbers[] = {42, 24};
+	size_t		numbers_len = sizeof(numbers) / sizeof(numbers[0]);
+
+	// fill list
+	fillList(&list, numbers, numbers_len);
+
+	// create uniq list
+	new = list_uniq_unsorted(&list, (t_list_compare)&compare);
+
+	// check origin list
+	checkListIntegrity(&list, numbers, numbers_len, "origin");
+
+	// check uniq list
+	checkListIntegrity(new, numbers, numbers_len, "new");
+
+	list_destroy(new);
+}
+
+void test_ListUniqUnsorted_RandomList(void)
+{
+	t_list		*new;
+	int			numbers[] = {8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8};
+	size_t		numbers_len = sizeof(numbers) / sizeof(numbers[0]);
+
+	// fill list
+	fillList(&list, numbers, numbers_len);
+
+	// create uniq list
+	new = list_uniq_unsorted(&list, (t_list_compare)&compare);
+
+	// check origin list
+	checkListIntegrity(&list, numbers, numbers_len, "origin");
+
+	// check uniq list
+	int			numbers2[] = {8, 7, 6, 5, 4, 3, 2, 1, 0};
+	numbers_len = sizeof(numbers2) / sizeof(numbers2[0]);
+	checkListIntegrity(new, numbers2, numbers_len, "new");
+
+	list_destroy(new);
+}
