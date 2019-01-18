@@ -170,4 +170,11 @@ t_list					*list_uniq_unsorted(const t_list *list,
 */
 t_list					*list_copy(const t_list *list);
 
+/*
+** Returns true if the list contains the data pointed to by `elem`
+** TODO: test
+*/
+bool					list_contains(const t_list *list, const void *elem,
+		t_list_compare cmp);
+
 #endif

@@ -146,6 +146,7 @@ SOURCES += list_filter.c
 SOURCES += list_swap.c
 SOURCES += list_sort.c
 SOURCES += list_uniq.c
+SOURCES += list_contains.c
 SOURCES += list_copy.c
 
 # Getopt
