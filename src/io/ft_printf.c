@@ -15,6 +15,7 @@ ssize_t	ft_printf(const char *format, ...)
 ssize_t	ft_vprintf(const char *format, va_list ap)
 {
 	t_string	buf;
+	ssize_t		ret;
 
 	if (string_init(&buf) == NULL)
 		return (-1);
@@ -23,7 +24,9 @@ ssize_t	ft_vprintf(const char *format, va_list ap)
 		string_shutdown(&buf);
 		return (-1);
 	}
-	return (io_safe_write(&buf, STDOUT_FILENO));
+	ret = io_safe_write(&buf, STDOUT_FILENO);
+	string_shutdown(&buf);
+	return (ret);
 }
 
 ssize_t	ft_dprintf(int fd, const char *format, ...)
@@ -40,6 +43,7 @@ ssize_t	ft_dprintf(int fd, const char *format, ...)
 ssize_t	ft_vdprintf(int fd, const char *format, va_list ap)
 {
 	t_string	buf;
+	ssize_t		ret;
 
 	if (string_init(&buf) == NULL)
 		return (-1);
@@ -48,5 +52,7 @@ ssize_t	ft_vdprintf(int fd, const char *format, va_list ap)
 		string_shutdown(&buf);
 		return (-1);
 	}
-	return (io_safe_write(&buf, fd));
+	ret = io_safe_write(&buf, fd);
+	string_shutdown(&buf);
+	return (ret);
 }
